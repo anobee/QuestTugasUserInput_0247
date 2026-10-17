@@ -169,3 +169,40 @@ fun act5(modifier: Modifier = Modifier) {
                             interactionSource = dateInteraction,
                             modifier = Modifier.weight(1f)
                         )
+
+                        ExposedDropdownMenuBox(
+                            expanded = expanded,
+                            onExpandedChange = { expanded = it },
+                            modifier = Modifier.weight(1f)
+                        ) {
+                            OutlinedTextField(
+                                value = experience,
+                                onValueChange = {},
+                                readOnly = true,
+                                label = { Text(stringResource(R.string.hint_experience)) },
+                                trailingIcon = {
+                                    ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded)
+                                },
+                                singleLine = true,
+                                shape = fieldShape,
+                                colors = fieldColors,
+                                modifier = Modifier
+                                    .menuAnchor()
+                                    .fillMaxWidth()
+                            )
+                            ExposedDropdownMenu(
+                                expanded = expanded,
+                                onDismissRequest = { expanded = false }
+                            ) {
+                                experiences.forEach { option ->
+                                    DropdownMenuItem(
+                                        text = { Text(option, fontSize = fieldTextSize) },
+                                        onClick = {
+                                            experience = option
+                                            expanded = false
+                                        }
+                                    )
+                                }
+                            }
+                        }
+                    }
