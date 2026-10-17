@@ -65,5 +65,22 @@ fun act5(modifier: Modifier = Modifier) {
                         (R.dimen.banner_height))
             )
 
-
+            Surface(
+                modifier = Modifier
+                    .align(Alignment.BottomCenter)
+                    .fillMaxWidth()
+                    .padding(bottom = dimensionResource(R.dimen.sheet_bottom_margin))
+                    .shadow(
+                        elevation = dimensionResource(R.dimen.sheet_elevation),
+                        shape = RoundedCornerShape(
+                            topStart = dimensionResource(R.dimen.sheet_corner),
+                            topEnd = dimensionResource(R.dimen.sheet_corner)
+                        )
+                    ),
+                color = colorResource(R.color.sheet_background),
+                shape = RoundedCornerShape(
+                    topStart = dimensionResource(R.dimen.sheet_corner),
+                    topEnd = dimensionResource(R.dimen.sheet_corner)
+                )
+            )
 }
