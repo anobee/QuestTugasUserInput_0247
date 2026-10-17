@@ -22,4 +22,11 @@ fun act5(modifier: Modifier = Modifier) {
     val skills = stringArrayResource(R.array.skill_options)
     val experiences = stringArrayResource(R.array.experience_options)
 
+    val isFormValid = firstName.isNotBlank() &&
+            lastName.isNotBlank() &&
+            email.isNotBlank() &&
+            birthDate.isNotBlank() &&
+            experience.isNotBlank() &&
+            selectedSkills.isNotEmpty()
+
 }
