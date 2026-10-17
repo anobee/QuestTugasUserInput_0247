@@ -26,4 +26,7 @@
     <color name="button_enabled">#FF673AB7</color>
     <color name="button_disabled">#FFE0E0E0</color>
     <color name="button_text">#FFFFFFFF</color>
+
+    <color name="indicator_active">#FF2962FF</color>
+    <color name="indicator_inactive">#FF9E9E9E</color>
 </resources>
