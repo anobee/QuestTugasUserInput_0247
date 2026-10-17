@@ -13,6 +13,10 @@
     <string name="action_proceed">Proceed</string>
     <string name="action_ok">OK</string>
     <string name="action_cancel">Batal</string>
+    <string name="date_pattern">dd/MM/yyyy</string>
+
+    <string name="cd_banner">Gambar banner neon</string>
+    <string name="cd_calendar">Pilih tanggal</string>
 
 
 </resources>
