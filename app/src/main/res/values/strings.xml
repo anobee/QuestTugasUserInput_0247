@@ -18,5 +18,11 @@
     <string name="cd_banner">Gambar banner neon</string>
     <string name="cd_calendar">Pilih tanggal</string>
 
+    <string-array name="skill_options">
+        <item>Android</item>
+        <item>UI/UX</item>
+        <item>Web</item>
+    </string-array>
+
 
 </resources>
