@@ -30,4 +30,5 @@
         <item>Sepuh</item>
     </string-array>
 
+    <string name="timezone_utc" translatable="false">UTC</string>
 </resources>
