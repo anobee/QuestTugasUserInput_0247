@@ -10,4 +10,8 @@
 
     <color name="screen_background">#FFF8F4FF</color>
     <color name="sheet_background">#FFFFFFFF</color>
+
+    <color name="title_color">#FF673AB7</color>
+    <color name="subtitle_color">#FF757575</color>
+    <color name="label_color">#FF212121</color>
 </resources>
