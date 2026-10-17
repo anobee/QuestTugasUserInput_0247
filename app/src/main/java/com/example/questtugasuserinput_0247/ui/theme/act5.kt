@@ -40,6 +40,7 @@ import androidx.compose.material3.TextButton
 import androidx.compose.material3.rememberDatePickerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import com.example.questtugasuserinput_0247.R
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
@@ -59,9 +60,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.TextUnit
-import java.time.Instant
-import java.time.ZoneOffset
-import java.time.format.DateTimeFormatter
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
+import java.util.TimeZone
+
 
 @Composable
 private fun spResource(@DimenRes id: Int): TextUnit {
@@ -178,7 +181,7 @@ fun act5(modifier: Modifier = Modifier) {
                     OutlinedTextField(
                         value = firstName,
                         onValueChange = { firstName = it },
-                        label = { Text(stringResource(R.string.hint_first_name)) },
+                        label = { Text(stringResource(R.string.first_name)) },
                         singleLine = true,
                         shape = fieldShape,
                         colors = fieldColors,
@@ -187,7 +190,7 @@ fun act5(modifier: Modifier = Modifier) {
                     OutlinedTextField(
                         value = lastName,
                         onValueChange = { lastName = it },
-                        label = { Text(stringResource(R.string.hint_last_name)) },
+                        label = { Text(stringResource(R.string.last_name)) },
                         singleLine = true,
                         shape = fieldShape,
                         colors = fieldColors,
@@ -200,7 +203,7 @@ fun act5(modifier: Modifier = Modifier) {
                     OutlinedTextField(
                         value = email,
                         onValueChange = { email = it },
-                        label = { Text(stringResource(R.string.hint_email)) },
+                        label = { Text(stringResource(R.string.email)) },
                         singleLine = true,
                         shape = fieldShape,
                         colors = fieldColors,
@@ -218,7 +221,7 @@ fun act5(modifier: Modifier = Modifier) {
                             value = birthDate,
                             onValueChange = {},
                             readOnly = true,
-                            label = { Text(stringResource(R.string.hint_birth_date)) },
+                            label = { Text(stringResource(R.string.birth_date)) },
                             trailingIcon = {
                                 Icon(
                                     imageVector = Icons.Default.DateRange,
@@ -242,7 +245,7 @@ fun act5(modifier: Modifier = Modifier) {
                                 value = experience,
                                 onValueChange = {},
                                 readOnly = true,
-                                label = { Text(stringResource(R.string.hint_experience)) },
+                                label = { Text(stringResource(R.string.experience)) },
                                 trailingIcon = {
                                     ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded)
                                 },
@@ -343,14 +346,16 @@ fun act5(modifier: Modifier = Modifier) {
     if (showDatePicker) {
         val datePickerState = rememberDatePickerState()
         val pattern = stringResource(R.string.date_pattern)
+        val timeZoneId = stringResource(R.string.timezone_utc)
         DatePickerDialog(
             onDismissRequest = { showDatePicker = false },
             confirmButton = {
                 TextButton(onClick = {
                     datePickerState.selectedDateMillis?.let { millis ->
-                        birthDate = Instant.ofEpochMilli(millis)
-                            .atZone(ZoneOffset.UTC)
-                            .format(DateTimeFormatter.ofPattern(pattern))
+                        val formatter = SimpleDateFormat(pattern, Locale.getDefault()).apply {
+                            timeZone = TimeZone.getTimeZone(timeZoneId)
+                        }
+                        birthDate = formatter.format(Date(millis))
                     }
                     showDatePicker = false
                 }) { Text(stringResource(R.string.action_ok)) }
