@@ -29,4 +29,15 @@ fun act5(modifier: Modifier = Modifier) {
             experience.isNotBlank() &&
             selectedSkills.isNotEmpty()
 
+    val fieldShape = RoundedCornerShape(dimensionResource(R.dimen.field_corner))
+    val fieldColors = OutlinedTextFieldDefaults.colors(
+        focusedBorderColor = colorResource(R.color.field_border_focused),
+        unfocusedBorderColor = colorResource(R.color.field_border),
+        focusedLabelColor = colorResource(R.color.field_border_focused),
+        unfocusedLabelColor = colorResource(R.color.field_text),
+        focusedTextColor = colorResource(R.color.field_text),
+        unfocusedTextColor = colorResource(R.color.field_text),
+        cursorColor = colorResource(R.color.field_border_focused)
+    )
+
 }
