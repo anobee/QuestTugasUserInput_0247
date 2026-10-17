@@ -3,7 +3,6 @@ package com.example.questtugasuserinput_0247.ui.theme
 
 import androidx.annotation.DimenRes
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
@@ -16,11 +15,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.pager.HorizontalPager
-import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -123,7 +118,7 @@ fun act5(modifier: Modifier = Modifier) {
 
             Image(
                 painter = painterResource
-                    (R.drawable.bg_spider_neon),
+                    (R.drawable.bg1),
                 contentDescription = stringResource
                     (R.string.cd_banner),
                 contentScale = ContentScale.Crop,
