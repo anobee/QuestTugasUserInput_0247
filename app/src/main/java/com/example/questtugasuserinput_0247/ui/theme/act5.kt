@@ -276,3 +276,29 @@ fun act5(modifier: Modifier = Modifier) {
             }
         }
     }
+
+    if (showDatePicker) {
+        val datePickerState = rememberDatePickerState()
+        val pattern = stringResource(R.string.date_pattern)
+        DatePickerDialog(
+            onDismissRequest = { showDatePicker = false },
+            confirmButton = {
+                TextButton(onClick = {
+                    datePickerState.selectedDateMillis?.let { millis ->
+                        birthDate = Instant.ofEpochMilli(millis)
+                            .atZone(ZoneOffset.UTC)
+                            .format(DateTimeFormatter.ofPattern(pattern))
+                    }
+                    showDatePicker = false
+                }) { Text(stringResource(R.string.action_ok)) }
+            },
+            dismissButton = {
+                TextButton(onClick = { showDatePicker = false }) {
+                    Text(stringResource(R.string.action_cancel))
+                }
+            }
+        ) {
+            DatePicker(state = datePickerState)
+        }
+    }
+}
