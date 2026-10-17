@@ -19,4 +19,7 @@
     <color name="field_border_focused">#FF673AB7</color>
     <color name="field_text">#FF49454F</color>
     <color name="icon_tint">#FF212121</color>
+
+    <color name="checkbox_checked">#FF673AB7</color>
+    <color name="checkbox_unchecked">#FF49454F</color>
 </resources>
