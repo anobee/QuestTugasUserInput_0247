@@ -249,3 +249,30 @@ fun act5(modifier: Modifier = Modifier) {
                             }
                         }
                     }
+
+                    Spacer(Modifier.height(dimensionResource(R.dimen.space_large)))
+
+                    Button(
+                        onClick = { /* TODO: aksi proceed */ },
+                        enabled = isFormValid,
+                        shape = fieldShape,
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = colorResource(R.color.button_enabled),
+                            contentColor = colorResource(R.color.button_text),
+                            disabledContainerColor = colorResource(R.color.button_disabled),
+                            disabledContentColor = colorResource(R.color.button_text)
+                        ),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(dimensionResource(R.dimen.button_height))
+                    ) {
+                        Text(
+                            text = stringResource(R.string.action_proceed),
+                            fontSize = spResource(R.dimen.text_button),
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                }
+            }
+        }
+    }
