@@ -22,4 +22,8 @@
 
     <color name="checkbox_checked">#FF673AB7</color>
     <color name="checkbox_unchecked">#FF49454F</color>
+
+    <color name="button_enabled">#FF673AB7</color>
+    <color name="button_disabled">#FFE0E0E0</color>
+    <color name="button_text">#FFFFFFFF</color>
 </resources>
