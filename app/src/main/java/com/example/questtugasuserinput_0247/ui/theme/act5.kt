@@ -221,3 +221,31 @@ fun act5(modifier: Modifier = Modifier) {
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically
                     )
+
+                    {
+                        skills.forEachIndexed { index, skill ->
+                            val checked = index in selectedSkills
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                modifier = Modifier.clickable {
+                                    if (checked) selectedSkills.remove(index) else selectedSkills.add(index)
+                                }
+                            ) {
+                                Checkbox(
+                                    checked = checked,
+                                    onCheckedChange = {
+                                        if (it) selectedSkills.add(index) else selectedSkills.remove(index)
+                                    },
+                                    colors = CheckboxDefaults.colors(
+                                        checkedColor = colorResource(R.color.checkbox_checked),
+                                        uncheckedColor = colorResource(R.color.checkbox_unchecked)
+                                    )
+                                )
+                                Text(
+                                    text = skill,
+                                    color = colorResource(R.color.label_color),
+                                    fontSize = spResource(R.dimen.text_checkbox)
+                                )
+                            }
+                        }
+                    }
