@@ -144,3 +144,28 @@ fun act5(modifier: Modifier = Modifier) {
                         modifier = Modifier.fillMaxWidth()
                     )
                     Spacer(Modifier.height(dimensionResource(R.dimen.space_medium)))
+
+                    Row(horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.space_medium))) {
+                        val dateInteraction = remember { MutableInteractionSource() }
+                        val isPressed by dateInteraction.collectIsPressedAsState()
+                        LaunchedEffect(isPressed) {
+                            if (isPressed) showDatePicker = true
+                        }
+                        OutlinedTextField(
+                            value = birthDate,
+                            onValueChange = {},
+                            readOnly = true,
+                            label = { Text(stringResource(R.string.hint_birth_date)) },
+                            trailingIcon = {
+                                Icon(
+                                    imageVector = Icons.Default.DateRange,
+                                    contentDescription = stringResource(R.string.cd_calendar),
+                                    tint = colorResource(R.color.icon_tint)
+                                )
+                            },
+                            singleLine = true,
+                            shape = fieldShape,
+                            colors = fieldColors,
+                            interactionSource = dateInteraction,
+                            modifier = Modifier.weight(1f)
+                        )
