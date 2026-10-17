@@ -83,4 +83,51 @@ fun act5(modifier: Modifier = Modifier) {
                     topEnd = dimensionResource(R.dimen.sheet_corner)
                 )
             )
-}
+
+            {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .verticalScroll(rememberScrollState())
+                        .padding(dimensionResource(R.dimen.sheet_padding))
+                ) {
+                    Text(
+                        text = stringResource(R.string.form_title),
+                        modifier = Modifier.fillMaxWidth(),
+                        textAlign = TextAlign.Center,
+                        color = colorResource(R.color.title_color),
+                        fontSize = spResource(R.dimen.text_title),
+                        fontWeight = FontWeight.Bold
+                    )
+
+                    Spacer(Modifier.height(dimensionResource(R.dimen.space_small)))
+                    Text(
+                        text = stringResource(R.string.form_subtitle),
+                        modifier = Modifier.fillMaxWidth(),
+                        textAlign = TextAlign.Center,
+                        color = colorResource(R.color.subtitle_color),
+                        fontSize = spResource(R.dimen.text_subtitle)
+                    )
+                    Spacer(Modifier.height(dimensionResource(R.dimen.space_large)))
+
+
+                Row(horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.space_medium))) {
+                    OutlinedTextField(
+                        value = firstName,
+                        onValueChange = { firstName = it },
+                        label = { Text(stringResource(R.string.hint_first_name)) },
+                        singleLine = true,
+                        shape = fieldShape,
+                        colors = fieldColors,
+                        modifier = Modifier.weight(1f)
+                    )
+                    OutlinedTextField(
+                        value = lastName,
+                        onValueChange = { lastName = it },
+                        label = { Text(stringResource(R.string.hint_last_name)) },
+                        singleLine = true,
+                        shape = fieldShape,
+                        colors = fieldColors,
+                        modifier = Modifier.weight(1f)
+                    )
+                }
