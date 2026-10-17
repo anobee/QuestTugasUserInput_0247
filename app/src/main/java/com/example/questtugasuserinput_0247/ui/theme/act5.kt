@@ -18,3 +18,8 @@ fun act5(modifier: Modifier = Modifier) {
 
     var showDatePicker by rememberSaveable { mutableStateOf(false) }
     var expanded by remember { mutableStateOf(false) }
+
+    val skills = stringArrayResource(R.array.skill_options)
+    val experiences = stringArrayResource(R.array.experience_options)
+
+}
