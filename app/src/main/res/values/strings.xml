@@ -24,5 +24,10 @@
         <item>Web</item>
     </string-array>
 
+    <string-array name="experience_options">
+        <item>Adict-adict</item>
+        <item>Medioker</item>
+        <item>Sepuh</item>
+    </string-array>
 
 </resources>
