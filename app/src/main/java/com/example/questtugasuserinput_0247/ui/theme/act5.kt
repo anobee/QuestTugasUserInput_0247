@@ -206,3 +206,18 @@ fun act5(modifier: Modifier = Modifier) {
                             }
                         }
                     }
+
+                    Spacer(Modifier.height(dimensionResource(R.dimen.space_medium)))
+
+                    Text(
+                        text = stringResource(R.string.label_skill),
+                        color = colorResource(R.color.label_color),
+                        fontSize = spResource(R.dimen.text_label),
+                        fontWeight = FontWeight.Bold
+                    )
+                    Spacer(Modifier.height(dimensionResource(R.dimen.space_small)))
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    )
