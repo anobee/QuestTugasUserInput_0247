@@ -40,4 +40,30 @@ fun act5(modifier: Modifier = Modifier) {
         cursorColor = colorResource(R.color.field_border_focused)
     )
 
+    val fieldTextSize = spResource(R.dimen.text_field)
+
+    Scaffold(
+        modifier = modifier.fillMaxSize(),
+        containerColor = colorResource(R.color.screen_background)
+    ) { innerPadding ->
+
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding)
+        ) {
+
+            Image(
+                painter = painterResource
+                    (R.drawable.bg_spider_neon),
+                contentDescription = stringResource
+                    (R.string.cd_banner),
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(dimensionResource
+                        (R.dimen.banner_height))
+            )
+
+
 }
