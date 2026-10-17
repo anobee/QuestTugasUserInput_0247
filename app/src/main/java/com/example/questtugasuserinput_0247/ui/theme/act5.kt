@@ -15,3 +15,6 @@ fun act5(modifier: Modifier = Modifier) {
     var birthDate by rememberSaveable { mutableStateOf("") }
     var experience by rememberSaveable { mutableStateOf("") }
     val selectedSkills = remember { mutableStateListOf<Int>() }
+
+    var showDatePicker by rememberSaveable { mutableStateOf(false) }
+    var expanded by remember { mutableStateOf(false) }
