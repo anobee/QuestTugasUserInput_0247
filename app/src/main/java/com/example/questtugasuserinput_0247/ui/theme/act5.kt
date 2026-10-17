@@ -131,3 +131,16 @@ fun act5(modifier: Modifier = Modifier) {
                         modifier = Modifier.weight(1f)
                     )
                 }
+
+                    Spacer(Modifier.height(dimensionResource(R.dimen.space_medium)))
+
+                    OutlinedTextField(
+                        value = email,
+                        onValueChange = { email = it },
+                        label = { Text(stringResource(R.string.hint_email)) },
+                        singleLine = true,
+                        shape = fieldShape,
+                        colors = fieldColors,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    Spacer(Modifier.height(dimensionResource(R.dimen.space_medium)))
